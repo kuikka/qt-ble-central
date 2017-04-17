@@ -1,0 +1,17 @@
+moc_*.cpp
+moc_*.h
+.*.swp
+*.o
+Makefile
+ble-central
+
+# For now
+gattcharacteristic1_adaptor.cpp
+gattcharacteristic1_adaptor.h
+gattmanager1_interface.cpp
+gattmanager1_interface.h
+gattservice1_adaptor.cpp
+gattservice1_adaptor.h
+objectmanager_adaptor.cpp
+objectmanager_adaptor.h
+
