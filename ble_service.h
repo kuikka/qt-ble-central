@@ -1,17 +1,23 @@
-#include <QtCore/QObject>
+#include <QtCore>
+#include "dbus_object.h"
 
 class BleCharacteristic;
+class GattService1Adaptor;
+class BleCentral;
 
-class BleService : public QObject
+class BleService : public DbusObject
 {
 	Q_OBJECT
 
 public:
-	BleService( QObject *parent );
+	BleService( const QUuid &uuid );
 	void add( BleCharacteristic *service );
+	void setCentral( BleCentral *central );
 
 private:
-	GattService1Adaptor	*m_adaptor;
+	GattService1Adaptor	*m_adaptor = nullptr;
+	BleCentral		*m_central = nullptr;
+	QVector<BleCharacteristic*> m_characteristics;
 	
 };
 
