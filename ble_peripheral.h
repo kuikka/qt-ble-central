@@ -6,23 +6,25 @@ class ObjectManagerAdaptor;
 class BleService;
 class BleCharacteristic;
 class BleDescriptor;
-class BleCentral;
 
-class BleCentral : public DbusObject
+class BlePeripheral : public DbusObject
 {
 	Q_OBJECT
 
 public:
-	BleCentral( QObject *parent, const QString &path );
+	BlePeripheral( QObject *parent, const QString &path );
 
 	void add( BleService *service );
-	bool registerCentral();
+	bool registerPeripheral();
 
 public Q_SLOTS:
 	ManagedObjectList GetManagedObjects();
 
 private:
+  void addObject( ManagedObjectList &list, DbusObject *o );
+private:
 	ObjectManagerAdaptor	*m_manager = nullptr;
 	QVector<BleService*>	m_services;
+  QVector<DbusObject*>  m_objects;
 
 };

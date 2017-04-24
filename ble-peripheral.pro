@@ -1,11 +1,11 @@
 CONFIG += debug
 CONFIG += c++11
 
-QT = core dbus
+QT = core dbus bluetooth
 
 SOURCES += \
 	main.cpp \
-	ble_central.cpp \
+	ble_peripheral.cpp \
 	ble_service.cpp \
 	ble_characteristic.cpp \
 	ble_descriptor.cpp \
@@ -16,7 +16,7 @@ SOURCES += \
 
 
 HEADERS += \
-	ble_central.h \
+	ble_peripheral.h \
 	ble_service.h \
 	ble_characteristic.h \
 	ble_descriptor.h \
@@ -26,10 +26,3 @@ HEADERS += \
 	gattcharacteristic1_adaptor.h \
 	dbus_object.h \
 
-
-#DBUS_INTERFACES += org.bluez.GattManager1.xml
-
-# Build by hand because of typedefs
-# DBUS_ADAPTORS += org.freedesktop.DBus.ObjectManager.xml
-#DBUS_ADAPTORS += org.bluez.GattService1.xml
-#DBUS_ADAPTORS += org.bluez.GattCharacteristic1.xml

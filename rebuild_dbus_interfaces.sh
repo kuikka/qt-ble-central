@@ -12,3 +12,6 @@ qdbusxml2cpp -i gattservice1_adaptor.h -a :gattservice1_adaptor.cpp org.bluez.Ga
 qdbusxml2cpp -a gattcharacteristic1_adaptor.h: org.bluez.GattCharacteristic1.xml
 qdbusxml2cpp -i gattcharacteristic1_adaptor.h -a :gattcharacteristic1_adaptor.cpp org.bluez.GattCharacteristic1.xml
 
+qdbusxml2cpp -a gattdescriptor1_adaptor.h: org.bluez.GattDescriptor1.xml
+qdbusxml2cpp -i gattdescriptor1_adaptor.h -a :gattdescriptor1_adaptor.cpp org.bluez.GattDescriptor1.xml
+
